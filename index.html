@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>replit</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+    <script
+      src="https://kit.fontawesome.com/4a45b90c57.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+
+  <body>
+    <!-- VIDEO BACKGROUND -->
+    <section class="backgound__video">
+      <video id="video" autoplay loop muted>
+        <source src="./image/bg-video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </section>
+
+    <div class="main__container">
+      <!--WELCOME SECTION  -->
+      <section class="section__welcome">
+        <!--FORM WELCOME  -->
+        <form id="form__welcome">
+          <label for="input__name">Hello, What's your name?</label>
+          <input type="text" name="name" id="input__name" required />
+        </form>
+      </section>
+      <!--MAIN HOMEPAGE  -->
+      <main class="main__homepage hidden">
+        <div class="buttons">
+          <!-- BUTTON ADD QOUTES -->
+          <button class="btn btn__addQoute">
+            Add Qoutes <i class="fa-solid fa-book"></i>
+          </button>
+          <!-- BUTTON ADD TODO LIST -->
+          <button class="btn btn__addTodo">
+            <i class="fa-solid fa-list-check"></i> Add To do List
+          </button>
+        </div>
+        <!-- FRONT PAGE -->
+        <section class="main__greeting">
+          <h1 class="current__time">
+            <!-- CURRENT TIME TODAY -->
+          </h1>
+          <div class="container__userName">
+            <span class="greeting">
+              <!-- GREETING -->
+            </span>
+            <span class="user__name" contenteditable="false">
+              <!-- YOUR NAME -->
+            </span>
+
+            <!-- BUTTON EDIT FOR NAME -->
+            <p class="btn__edit-name">
+              <span>
+                <i class="fa-solid fa-ellipsis"></i>
+              </span>
+              <small class="edit__name">Edit</small>
+            </p>
+          </div>
+        </section>
+        <!--FORM FOCUS  -->
+        <form id="form__focus">
+          <label for="input__focus">What is your main focus today?</label>
+          <input type="text" name="mainFocus" id="input__focus" required />
+        </form>
+        <!--FOCUS OUTPUT -->
+        <section class="focus__output hidden">
+          <p class="today">TODAY</p>
+          <span class="focus__info" contenteditable="false"></span>
+          <!-- BUTTON EDIT FOR FOCUS INFO -->
+          <div class="btn__edit-focus">
+            <span>
+              <i class="fa-solid fa-ellipsis"></i>
+            </span>
+
+            <p class="focus__option">
+              <small class="edit__focus"> Edit</small>
+              <small class="clear__focus"> Clear</small>
+            </p>
+          </div>
+        </section>
+        <!-- RANDOM QOUTES -->
+        <section class="random__qoute">
+          <span class="qoute">
+            <!-- QOUTE -->
+          </span>
+          <!-- BTN RANDOM -->
+          <span class="btn__random">
+            <i class="fa-solid fa-rotate"></i>
+          </span>
+        </section>
+
+        <!--TODO LIST  -->
+        <section class="section__todoList hide">
+          <div class="arrow arrow__todo"></div>
+          <form class="form__addTodo">
+            <input
+              type="text"
+              name="addTodo"
+              class="input__addTodo"
+              placeholder="Add New To do..."
+            />
+            <small class="error__message-todo"></small>
+          </form>
+          <ul class="todoList__box">
+            <!-- TODO LIST ITEM -->
+          </ul>
+          <div class="flex">
+            <!-- BUTTON SELECT ALL -->
+            <button class="btn__select-all">All</button>
+            <!-- BUTTON SELECT ACTIVE -->
+            <button class="btn__select-active">Active</button>
+            <!-- BUTTON SELECT COMPLETED -->
+            <button class="btn__select-completed">Completed</button>
+            <!-- BUTTON CLEAR ALL TODO LIST -->
+            <button class="btn__clear-all-todolist">Clear List</button>
+          </div>
+        </section>
+        <section class="section__qoute hide">
+          <div class="arrow arrow__qoute"></div>
+          <form class="form__addQoute">
+            <input
+              type="text"
+              name="form__addQoute"
+              class="input__addQoute"
+              placeholder="Add New Qoutes..."
+            />
+            <small class="error__message-qoute"></small>
+          </form>
+          <ul class="qoute__box">
+            <!-- QOUTE LIST -->
+          </ul>
+          <div class="flex">
+            <!-- BUTTON CLEAR ALL TODO LIST -->
+            <button class="btn__clear-all-qoutelist">
+              <i class="fa-solid fa-rectangle-xmark"></i> Clear
+            </button>
+            <button class="btn__see-list">
+              <i class="fa-solid fa-list-ul"></i> List
+            </button>
+            <div class="container__qoute-list">
+              <h1>List of Qoutes <i class="fa-solid fa-book"></i></h1>
+              <ul class="qoute__list-box"></ul>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script type="module" src="./app.js"></script>
+  </body>
+</html>

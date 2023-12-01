@@ -1,0 +1,593 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+
+/* Base Styles */
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+* {
+  box-sizing: inherit;
+  margin: 0;
+  outline: none;
+  font-family: "Josefin Sans", sans-serif;
+}
+
+/* Layout Styles */
+body {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  min-height: 100vh;
+  color: #fff;
+}
+
+.flex {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.main__container {
+  width: clamp(30rem, 90vw, 140rem);
+  margin-inline: auto;
+}
+
+/* Typography */
+label,
+input,
+p,
+.btn__edit-focus span {
+  font-size: clamp(2rem, 2.6vw, 2.6rem);
+}
+
+h1 {
+  font-size: clamp(4rem, 5vw, 4.5rem);
+}
+
+/* Form Elements */
+label {
+  display: block;
+  margin-bottom: 1rem;
+}
+
+input {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+  text-align: center;
+  border-bottom: 2px solid #fff;
+}
+
+input::placeholder {
+  color: hsl(236, 9%, 81%);
+}
+
+button {
+  padding: 1rem clamp(1.5rem, 2.5vw, 2.5rem);
+  font-size: clamp(1.2rem, 1.6vw, 1.6rem);
+  border: 1px solid transparent;
+  font-weight: bold;
+  border-radius: 5rem;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+/* Button Styles */
+button:hover {
+  border: 1px solid #fff;
+  background-color: transparent;
+  color: #fff;
+  transition: all 300ms;
+  cursor: pointer;
+}
+
+/* Background Video */
+.section__welcome {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+}
+.form__welcome > label,
+.container__userName,
+.focus__info {
+  font-size: clamp(2.5rem, 3.5vw, 3.5rem);
+}
+
+.backgound__video {
+  position: absolute;
+  inset: 0;
+  overflow-y: hidden;
+  z-index: -1;
+}
+
+#video {
+  width: 100%;
+  min-height: 100vh;
+  object-fit: cover;
+}
+
+/* MAIN HOMEPAGE */
+.main__homepage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 100vh;
+  flex-direction: column;
+  gap: 5rem;
+}
+
+.current__time {
+  font-size: clamp(6rem, 8vw, 8.5rem);
+  margin: 4rem 0 1.5rem;
+}
+
+.container__userName,
+.focus__output {
+  position: relative;
+}
+.container__userName,
+.focus__info {
+  margin-left: 1.25rem;
+}
+.btn__edit-name,
+.user__name {
+  position: relative;
+  z-index: 10;
+}
+.user__name {
+  border: none;
+  text-align: left;
+}
+
+/* Edit Buttons */
+.btn__edit-name,
+.btn__edit-focus {
+  position: relative;
+  right: 0;
+  display: inline-block;
+  padding-left: 1rem;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.btn__edit-focus {
+  top: 75%;
+}
+
+/* Edit Fields */
+.edit__name,
+.focus__option {
+  position: absolute;
+  bottom: -3rem;
+  right: -2.5rem;
+  padding: 8px 1.2rem;
+  opacity: 0;
+  font-size: clamp(1.2rem, 1.5vw, 1.4rem);
+  background-color: #fff;
+  font-weight: 700;
+  color: #000;
+  border-radius: 3px;
+  transition: 300ms;
+  cursor: pointer;
+}
+.focus__option {
+  bottom: -6rem;
+  right: -3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  justify-content: space-between;
+}
+.edit__focus,
+.clear__focus {
+  padding: 5px 0;
+}
+.clear__focus {
+  padding-bottom: 0;
+}
+.edit__focus {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+/* Edit Arrows */
+.edit__name::before,
+.focus__option::before,
+.container__qoute-list::before {
+  content: "";
+  position: absolute;
+  top: -9px;
+  left: 1rem;
+  border-bottom: 5px solid #fff;
+  border-top: 5px solid transparent;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+}
+
+/* Hover Effects */
+.container__userName:hover .btn__edit-name,
+.focus__output:hover .btn__edit-focus,
+.btn__edit-focus:hover .focus__option,
+.btn__edit-name:hover .edit__name {
+  opacity: 1;
+  transition: 300ms;
+}
+
+/* FOCUS OUTPUT */
+.today {
+  font-size: clamp(1.6rem, 2vw, 2.2rem);
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+/* Random Quote */
+.random__qoute {
+  position: absolute;
+  width: clamp(30rem, 90vw, 140rem);
+  bottom: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  font-size: clamp(1.8rem, 2vw, 2.2rem);
+}
+.btn__random {
+  position: absolute;
+  opacity: 0;
+  bottom: -3rem;
+  border: 1px solid transparent;
+  transition: 300ms;
+  font-size: clamp(1.6rem, 1.5vw, 1.8rem);
+}
+
+.btn__random:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+
+.btn__random:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.random__qoute:hover .btn__random {
+  opacity: 1;
+  transition: 300ms;
+}
+
+.focus__info {
+  margin-top: 1rem;
+  border: none;
+}
+
+/* Button Positions */
+.btn,
+.section__todoList,
+.list__empty,
+.section__qoute,
+.container__qoute-list {
+  position: absolute;
+}
+
+.btn__addTodo {
+  top: 2rem;
+  right: 0;
+}
+
+.btn__addQoute {
+  top: 2rem;
+  left: 0;
+}
+
+/* SECTION TODO LIST & QUOTES */
+.section__todoList,
+.section__qoute,
+.container__qoute-list {
+  z-index: 0;
+  width: clamp(28rem, 35vw, 32rem);
+  height: clamp(30rem, 40vw, 35rem);
+  padding: clamp(2rem, 3vw, 2.5rem);
+  background-color: #fff;
+  border-radius: 1rem;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+/* Shared Styles for Lists */
+.section__todoList > div.flex {
+  justify-content: space-between;
+}
+
+.section__todoList button,
+.section__qoute button {
+  color: hsl(236, 9%, 41%);
+  padding: 1rem 0 5px;
+  border-radius: 0;
+}
+
+.section__todoList button {
+  border-bottom: 1px solid hsl(236, 9%, 81%);
+}
+
+/* Hover Effects for Buttons */
+.section__todoList button:hover,
+.section__qoute button:hover {
+  color: hsl(236, 9%, 11%);
+  transition: 300ms;
+}
+
+/* Scrollbar Styles */
+.todoList__box::-webkit-scrollbar,
+.qoute__box::-webkit-scrollbar,
+.qoute__list-box::-webkit-scrollbar {
+  width: 0;
+  background-color: transparent;
+}
+
+/* Custom scrollbar styles */
+.todoList__box::-webkit-scrollbar-track,
+.qoute__box::-webkit-scrollbar-track,
+.qoute__list-box::-webkit-scrollbar-track {
+  background-color: #f1f1f1;
+}
+
+/* Arrows for Lists */
+.arrow {
+  position: absolute;
+  border-bottom: 2rem solid #fff;
+  border-top: 2rem solid transparent;
+  border-left: 2rem solid transparent;
+  border-right: 2rem solid transparent;
+}
+
+.arrow__qoute,
+.arrow__todo {
+  top: -3.5rem;
+}
+
+.arrow__todo {
+  left: 70%;
+}
+
+.arrow__qoute {
+  left: 20%;
+}
+
+/* List Positions */
+.section__qoute,
+.section__todoList {
+  top: 8rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.section__qoute {
+  left: 0;
+}
+
+.section__qoute > div:last-child {
+  justify-content: space-between;
+}
+
+.container__qoute-list {
+  top: 2rem;
+  left: 0;
+  transform: translateY(0);
+  opacity: 0;
+  z-index: -1;
+  transition: all 300ms;
+}
+
+/* Quote List Styles */
+.container__qoute-list::before {
+  content: "";
+  position: absolute;
+  top: -1.4rem;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-bottom: 1.5rem solid #fff;
+  border-top: 1.5rem solid transparent;
+  border-left: 1.5rem solid transparent;
+  border-right: 1.5rem solid transparent;
+}
+
+.container__qoute-list h1 {
+  font-size: clamp(2.2rem, 2.6vw, 2.8rem);
+  color: #000;
+  margin-bottom: 1rem;
+}
+
+.qoute-list-show {
+  transform: translateY(100%);
+  opacity: 1;
+  transition: all 300ms;
+}
+
+/* List Item Styles */
+.qoute__list-box li {
+  color: #000;
+}
+
+/* Shared Styles for Lists */
+.section__todoList {
+  right: 0;
+}
+
+.zIndex {
+  z-index: 20;
+}
+
+/* Todo List Form */
+.form__addTodo,
+.form__addQoute {
+  position: relative;
+  text-align: left;
+}
+.form__addTodo input,
+.form__addQoute input {
+  margin-bottom: 1rem;
+}
+.error__message-todo,
+.error__message-qoute {
+  color: red;
+  font-size: 1.4rem;
+  display: none;
+}
+.show {
+  display: block;
+}
+/* Bottom Button Bar */
+.btn__list {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #fff;
+  z-index: 10;
+}
+
+/* List Boxes */
+.todoList__box,
+.qoute__box,
+.qoute__list-box {
+  position: relative;
+  height: 30rem;
+  text-align: left;
+  overflow-y: scroll;
+}
+.todoList__box {
+  padding: 0;
+}
+.qoute__list-box {
+  height: clamp(22rem, 30vw, 25rem);
+}
+/* Input Styles */
+.input__addTodo,
+.input__addQoute,
+.todoList__box li {
+  color: #000;
+}
+
+.input__addTodo,
+.input__addQoute {
+  text-align: left;
+  font-size: clamp(1.8rem, 2vw, 1.2rem);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  padding: 5px 0;
+  width: 100%;
+}
+
+/* List Item Styles */
+.todoList__box li:not(.list__empty),
+.qoute__box li:not(.list__empty),
+.qoute__list-box li {
+  font-size: clamp(1.6rem, 1.5vw, 1.8rem);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+}
+
+.qoute__box li {
+  padding-left: 3px;
+  color: #000;
+}
+
+/* List Item Markers */
+.qoute__box li::marker,
+.todoList__box li::marker,
+.qoute__list-box li::marker {
+  content: "📃";
+}
+.todoList__box .list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Empty List Message */
+.todoList__box .list__empty,
+.qoute__box .list__empty {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(1.4rem, 1.6vw, 1.6rem);
+  line-height: 1.5;
+  color: hsl(236, 9%, 61%);
+  text-align: center;
+}
+
+/* Hover Effects for List Items */
+.list:hover .btn__check,
+.list:hover .btn__delete {
+  opacity: 1;
+  transition: 300ms;
+}
+
+/* Button Styles for List Items */
+.btn__delete,
+.btn__check {
+  color: hsl(236, 9%, 61%);
+  opacity: 0.8;
+  transition: 300ms;
+}
+
+.btn__delete:hover {
+  color: lightcoral;
+  transition: 300ms;
+  cursor: pointer;
+}
+
+/* Completed Todo Styles */
+.completed__todo {
+  text-decoration: line-through;
+  color: hsl(236, 9%, 61%);
+}
+
+.checked {
+  color: hsl(154, 59%, 51%);
+}
+
+.btn__check:hover {
+  color: hsl(154, 59%, 51%);
+  transition: 300ms;
+  cursor: pointer;
+}
+
+.hidden {
+  display: none;
+}
+
+.hide {
+  opacity: 0;
+  transform: translateY(1rem);
+  transition: 300ms;
+}
+
+@media screen and (min-width: 768px) {
+  .container__qoute-list {
+    top: 0;
+    left: 3rem;
+    transform: translateX(0);
+    opacity: 0;
+    z-index: -1;
+    transition: all 300ms;
+  }
+  /* Quote List Styles */
+  .container__qoute-list::before {
+    top: 50%;
+    left: -1.4rem;
+    border-bottom: 1.5rem solid transparent;
+    border-right: 1.5rem solid #fff;
+  }
+
+  .qoute-list-show {
+    transform: translateX(100%);
+    opacity: 1;
+    transition: all 300ms;
+  }
+}
